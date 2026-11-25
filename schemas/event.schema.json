@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Story Event",
+  "type":"object",
+  "required":["id","description","source_location","status"],
+  "properties":{
+    "id":{"type":"string","pattern":"^E[0-9]{3,}$"},
+    "description":{"type":"string","minLength":1},
+    "source_location":{"type":"string","minLength":1},
+    "status":{"enum":["SOURCE_FACT","INFERRED","ADAPTED","REMOVED","PENDING"]},
+    "causes":{"type":"array","items":{"type":"string","pattern":"^E[0-9]{3,}$"}},
+    "consequences":{"type":"array","items":{"type":"string","pattern":"^E[0-9]{3,}$"}}
+  },
+  "additionalProperties":true
+}
