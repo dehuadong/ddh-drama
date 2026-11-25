@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Episode Outline",
+  "type":"object",
+  "required":["episode","title","goal","conflict","turning_point","ending_hook","source_refs"],
+  "properties":{
+    "episode":{"type":"integer","minimum":1},
+    "title":{"type":"string"},
+    "goal":{"type":"string","minLength":1},
+    "conflict":{"type":"string","minLength":1},
+    "turning_point":{"type":"string","minLength":1},
+    "ending_hook":{"type":"string","minLength":1},
+    "source_refs":{"type":"array","items":{"type":"string"}},
+    "decision_refs":{"type":"array","items":{"type":"string","pattern":"^D[0-9]{3,}$"}}
+  },
+  "additionalProperties":true
+}
