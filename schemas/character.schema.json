@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Adapted Character",
+  "type":"object",
+  "required":["id","name","status"],
+  "properties":{
+    "id":{"type":"string","pattern":"^C[0-9]{3,}$"},
+    "name":{"type":"string","minLength":1},
+    "status":{"enum":["ACTIVE","REMOVED","MERGED","SUPERSEDED"]},
+    "source_refs":{"type":"array","items":{"type":"string"}},
+    "relationships":{"type":"array","items":{"type":"object","required":["target","type"],"properties":{"target":{"type":"string","pattern":"^C[0-9]{3,}$"},"type":{"type":"string"}},"additionalProperties":true}}
+  },
+  "additionalProperties":true
+}
