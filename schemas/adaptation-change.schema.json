@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Adaptation Change Decision",
+  "type":"object",
+  "required":["id","operation","source_refs","reason","dramatic_function","approval"],
+  "properties":{
+    "id":{"type":"string","pattern":"^D[0-9]{3,}$"},
+    "operation":{"enum":["KEEP","DELETE","COMPRESS","MERGE","REORDER","EXPAND","ADD","TRANSFORM"]},
+    "source_refs":{"type":"array","items":{"type":"string"},"minItems":1},
+    "reason":{"type":"string","minLength":1},
+    "dramatic_function":{"type":"string","minLength":1},
+    "impact":{"type":"array","items":{"type":"string"}},
+    "risk":{"type":"string"},
+    "approval":{"enum":["PENDING","APPROVED","REJECTED"]}
+  },
+  "additionalProperties":true
+}
