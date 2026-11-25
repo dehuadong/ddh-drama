@@ -1,0 +1,41 @@
+project:
+  name: ""
+  version: "1.0.0"
+  status: "IN_PROGRESS"
+source:
+  title: ""
+  author: ""
+  version: ""
+  coverage: ""
+  total_chapters: null
+adaptation:
+  type: "短剧"
+  platform: ""
+  target_audience: ""
+  genre: ""
+  tone: ""
+  freedom: "适度改编"
+series:
+  total_episodes: null
+  episode_duration_minutes: null
+production:
+  budget_level: "待确认"
+workflow:
+  current_stage: "01-source-analysis"
+  stages:
+    source_analysis: "NOT_STARTED"
+    adaptation_design: "NOT_STARTED"
+    story_reconstruction: "NOT_STARTED"
+    series_planning: "NOT_STARTED"
+    screenplay_drafting: "NOT_STARTED"
+    script_review: "NOT_STARTED"
+approval:
+  source_analysis: false
+  adaptation_design: false
+  story_reconstruction: false
+  series_planning: false
+constraints:
+  track_source_evidence: true
+  track_added_plot: true
+  require_approval_for_major_changes: true
+  review_is_read_only_by_default: true
