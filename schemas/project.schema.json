@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Adaptation Project",
+  "type":"object",
+  "required":["project","source","adaptation","series","workflow","approval"],
+  "properties":{
+    "project":{"type":"object","required":["name","version","status"],"properties":{"name":{"type":"string","minLength":1},"version":{"type":"string"},"status":{"enum":["IN_PROGRESS","ON_HOLD","COMPLETED","ARCHIVED"]}},"additionalProperties":true},
+    "source":{"type":"object","required":["title","coverage"],"properties":{"title":{"type":"string","minLength":1},"coverage":{"type":"string","minLength":1},"total_chapters":{"type":["integer","null"],"minimum":1}},"additionalProperties":true},
+    "adaptation":{"type":"object","required":["type","freedom"],"properties":{"type":{"type":"string","minLength":1},"freedom":{"type":"string","minLength":1}},"additionalProperties":true},
+    "series":{"type":"object","properties":{"total_episodes":{"type":["integer","null"],"minimum":1},"episode_duration_minutes":{"type":["number","null"],"exclusiveMinimum":0}},"additionalProperties":true},
+    "workflow":{"type":"object","required":["current_stage","stages"],"properties":{"current_stage":{"type":"string"},"stages":{"type":"object","required":["source_analysis","adaptation_design","story_reconstruction","series_planning","screenplay_drafting","script_review"],"additionalProperties":{"enum":["NOT_STARTED","IN_PROGRESS","REVIEW","APPROVED","BLOCKED","DONE"]}}},"additionalProperties":true},
+    "approval":{"type":"object","additionalProperties":{"type":"boolean"}}
+  },
+  "additionalProperties":true
+}
