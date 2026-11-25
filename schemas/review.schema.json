@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Screenplay Review Finding",
+  "type":"object",
+  "required":["id","severity","location","dimension","finding","impact","recommendation"],
+  "properties":{
+    "id":{"type":"string","pattern":"^R[0-9]{3,}$"},
+    "severity":{"enum":["P0","P1","P2","P3"]},
+    "location":{"type":"string","minLength":1},
+    "dimension":{"type":"string","minLength":1},
+    "finding":{"type":"string","minLength":1},
+    "impact":{"type":"string","minLength":1},
+    "recommendation":{"type":"string","minLength":1},
+    "source_refs":{"type":"array","items":{"type":"string"}},
+    "decision_refs":{"type":"array","items":{"type":"string","pattern":"^D[0-9]{3,}$"}},
+    "author_decision_required":{"type":"boolean"}
+  },
+  "additionalProperties":true
+}
