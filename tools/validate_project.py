@@ -3,6 +3,11 @@
 import argparse, re, sys
 from pathlib import Path
 
+ID_PATTERNS = {
+ "C": re.compile(r"^C\d{3,}$"), "E": re.compile(r"^E\d{3,}$"),
+ "F": re.compile(r"^F\d{3,}$"), "D": re.compile(r"^D\d{3,}$"),
+ "R": re.compile(r"^R\d{3,}$"), "S": re.compile(r"^S\d{2}-\d{3}$"),
+}
 ID_RE = re.compile(r"\b(?:C\d{3,}|E\d{3,}|F\d{3,}|D\d{3,}|R\d{3,}|S\d{2}-\d{3})\b")
 ID_DEF_RE = re.compile(r"(?m)^\s*(?:#{1,6}\s*)?((?:C|E|F|D|R)\d{3,}|S\d{2}-\d{3})(?:\s*[·|：:]|\s*$)")
 REQUIRED = {
